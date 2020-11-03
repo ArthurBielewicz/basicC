@@ -1,0 +1,32 @@
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    int hashs;
+    int spaces;
+    do
+    {
+        n = get_int("Size: ");
+        hashs = 1;
+        spaces = n-hashs;
+    }
+
+    while (n < 1 || n>8);
+    for (int i = 0; i < n; i++)
+    {   
+        for (int j = hashs; j < n; j++)
+        {
+            printf(" ");            
+        }
+        for (int h = spaces; h < n; h++)
+        {
+            printf("#");            
+        }        
+        printf("\n");
+        spaces = spaces-1;
+        hashs = hashs + 1;
+    }
+}
